@@ -15,6 +15,16 @@
 - [License](#license)
 - [Author](#author)
 
+  TechSupportChatbot/
+├── .gitattributes
+├── .gitignore
+├── README.md
+├── [YOUR_NOTEBOOK_NAME].ipynb
+├── your_tech_support_dataset_file.csv
+└── app/                 <--- This would be your new folder
+    ├── app.py
+    └── requirements.txt
+
 ## Project Overview
 
 This project implements an AI-powered chatbot designed to provide automated assistance for common technical support inquiries. Leveraging advanced Natural Language Processing (NLP) techniques, the chatbot understands user questions and generates relevant, helpful responses, acting as a first line of support.
@@ -35,6 +45,21 @@ The chatbot's core functionality is built upon a **Transformer-based sequence-to
 2.  **Domain Specialization (Fine-tuning):** To adapt `t5-small` for tech support, it undergoes a crucial **fine-tuning** process. This involves training the model on a custom dataset containing pairs of `user_query` (technical support questions) and `chatbot_response` (corresponding detailed answers or troubleshooting steps). This specialization teaches the model the specific terminology, problem patterns, and appropriate solutions within the tech support domain.
 
 3.  **Inference and Interaction:** When a user inputs a question through the Gradio interface, the fine-tuned model processes this input and generates a relevant output sequence (the answer).
+
+## Evaluation Results
+
+The model was fine-tuned for 10 epochs. The training process showed consistent improvement, leading to strong performance metrics on the validation set.
+
+| Metric        | Value (Epoch 10) |
+| :------------ | :--------------- |
+| Training Loss | 0.045100         |
+| Validation Loss | 0.032651       |
+| Bleu          | 0.789206         |
+| Rouge1 F1     | 0.829667         |
+
+* **Training Loss & Validation Loss:** These indicate how well the model is learning and generalizing to unseen data. The low validation loss suggests the model is not overfitting and is learning effectively.
+* **BLEU Score (Bilingual Evaluation Understudy):** Measures the similarity between the model's generated text and the reference (ground truth) text. A higher BLEU score indicates better quality and fluency of generated responses.
+* **ROUGE-1 F1 Score (Recall-Oriented Understudy for Gisting Evaluation):** Measures the overlap of unigrams (single words) between the model's generated text and the reference. An F1 score balances precision and recall, with higher values indicating better content overlap and relevance.
 
 ## Technologies Used
 
@@ -97,6 +122,7 @@ This project is licensed under the **[Apache License 2.0](https://www.apache.org
 ## Author
 
 **IkireziI**
+
 **Inès IKIREZI**
 
 https://github.com/IkireziI/TechSupport-Chatbot.git
