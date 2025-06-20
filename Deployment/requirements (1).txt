@@ -1,0 +1,7 @@
+torch
+transformers
+gradio
+sentencepiece # T5 models often use this for tokenization
+evaluate
+datasets
+rouge_score
