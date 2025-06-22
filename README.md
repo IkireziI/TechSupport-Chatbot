@@ -19,9 +19,9 @@
 ├── .gitattributes
 ├── .gitignore
 ├── README.md
-├── [YOUR_NOTEBOOK_NAME].ipynb
-├── your_tech_support_dataset_file.csv
-└── app/                 <--- This would be your new folder
+├── TechSupport-Chatbot_Model.ipynb
+├── tech_support_dataset_file.csv
+└── app/                 
     ├── app.py
     └── requirements.txt
 
