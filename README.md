@@ -106,6 +106,67 @@ This repository contains the following key files:
 * `app.py`: The Python script for deploying the Gradio chatbot on Hugging Face Spaces, which loads the model directly from the Hugging Face Hub.
 * `requirements.txt`: Lists all Python library dependencies required to run `app.py` on Hugging Face Spaces.
 
+  ## Steps to Run Your Chatbot
+
+  1. Running Locally in Google Colab (For Development & Testing)
+To run and experiment with the chatbot in your own Google Colab environment, you'll execute the cells of your Jupyter Notebook sequentially. This allows you to see the data processing, model training, and then interact with a local Gradio interface.
+
+Prerequisites:
+
+A Google account with access to Google Colab.
+Your Colab Notebook file (TechSupport-Chatbot_Model.ipynb) uploaded to your Google Drive or accessed directly from your GitHub repository.
+ my dataset file (tech_support_dataset_file.csv) accessible in your Colab environment (e.g., in the same directory as the notebook or mounted from Google Drive).
+Instructions:
+
+Open the Notebook:
+
+Navigate to your Google Colab environment (colab.research.google.com).
+Open your TechSupport-Chatbot_Model.ipynb file.
+Connect to Runtime:
+
+Ensure you are connected to a Colab runtime. It is highly recommended to use a GPU runtime for faster model training.
+Go to Runtime (in the top menu) -> Change runtime type.
+Select GPU as the hardware accelerator and click Save.
+Install Dependencies (Crucial First Step):
+
+Run the first code cell in my notebook. This cell typically contains commands like !pip install transformers datasets accelerate gradio evaluate rouge_score.
+IMPORTANT: After these packages are installed, Colab will often prompt you to restart the runtime. Go to Runtime -> Restart runtime (or click the button if prompted). This ensures all newly installed libraries are correctly loaded.
+Run All Remaining Cells Sequentially:
+
+After restarting the runtime, proceed to run all subsequent code cells in the notebook, from top to bottom.
+These cells will perform the following actions:
+Load your dataset.
+Initialize the tokenizer and preprocess your data.
+Load the t5-small model.
+Configure and start the fine-tuning process.
+Evaluate the trained model.
+Save and push your fine-tuned model to Hugging Face Hub.
+Launch Local Gradio Interface:
+
+The final code cell in my notebook (or one near the end) will contain the Gradio interface setup and launch command (e.g., interface.launch(share=True)).
+Run this cell. It will output a public URL (starting with https://...) that you can click to open the interactive chatbot interface in a new browser tab. This link is temporary and will expire when your Colab session ends.
+2. Accessing the Deployed Chatbot (Publicly Available)
+My chatbot is permanently deployed on Hugging Face Spaces, making it accessible to anyone with the link, without needing a Colab environment.
+
+Instructions:
+
+Open Your Chatbot Link:
+
+Simply click or navigate to the following URL in your web browser: 🔗 https://huggingface.co/spaces/ikirezii/inesii
+
+Interact with the Interface:
+
+Once the page loads, you will see the Gradio web interface.
+Type your tech support question into the provided input text box.
+Click the Submit button (or press Enter) to send your query.
+The chatbot's generated response will appear in the output display area.
+You can use the Clear button to reset the conversation and input a new query.
+
+## Examples of conversations of my chatbot
+
+for examples of the question you can ask: 1.Forgot password , 2.Slow system performance , 3.Software installation failure , 4.Unable to access email
+and the answers : 1.Reinstall the printer drivers. , 2.Run a system diagnostic tool. , 3.Follow the software installation guide. , 4.Run a system diagnostic tool.
+
 
 ## Future Enhancements
 
